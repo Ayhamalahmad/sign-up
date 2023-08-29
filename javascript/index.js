@@ -129,3 +129,14 @@ signUpBotton.addEventListener("click", (event) => {
     localStorage.setItem("user", userDataString);
   }
 });
+//  show password
+let show = document.querySelector(".show");
+// passwordInput.type = "text";
+show.addEventListener("click",(e)=>{
+  console.log(e.target);
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+})
