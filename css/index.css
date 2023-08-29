@@ -79,6 +79,11 @@
 
   /*  */
   /* Start image */
+  @media (max-width:767px) {
+    .container .app  {
+        margin: 20px 0;
+    }
+}
   .container .app .image {
       display: flex;
       flex-direction: column;
@@ -92,6 +97,7 @@
           display: none;
       }
   }
+
 
   .container .image img {
       max-width: 100%;
