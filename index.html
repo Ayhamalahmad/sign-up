@@ -11,42 +11,49 @@
   </head>
   <body>
     <div class="container">
-      <div class="image">
-        <img src="imges/undraw_sign_up_n6im.svg" alt="" />
-        <a href="#">I'm Already a Member</a>
-      </div>
-      <form class="sign-up-form">
-        <h1>Sign Up</h1>
-        <div>
-          <input type="text" placeholder="Full Name" />
+      <div class="app">
+        <div class="image">
+          <img src="imges/undraw_working_remotely_re_6b3a.svg" alt="" />
+          <a href="#">I'm Already a Member</a>
         </div>
-        <div>
-          <input type="text" placeholder="@User Name" />
-        </div>
-        <div>
-          <input type="text" placeholder="Email" />
-        </div>
+        <form class="sign-up-form">
+          <h1>Sign Up</h1>
+          <div>
+            <i class="fas fa-user"></i>
+            <input class="full-name" type="text" placeholder="Full Name" />
+            <span class="name-massege">Lorem, ipsum.</span>
+          </div>
+          <div>
+            <i class="fas fa-at"></i>
+            <input class="user-name" type="text" placeholder="@User Name" />
+            <span class="user-massege">Lorem, ipsum.</span>
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            <input class="email" type="text" placeholder="Email" />
+            <span class="email-massege">Lorem, ipsum.</span>
+          </div>
 
-        <div>
-          <input type="text" placeholder="Password" />
-        </div>
-        <div>
-          <input type="text" placeholder="Confirm Password" />
-        </div>
-        <div>
-          <label for="female">female</label>
-        </div>
-        <div>
-          <input type="checkbox" id="female" />
-        </div>
-        <div>
-          <label for="male">male</label>
-        </div>
-        <div>
-          <input type="checkbox" id="male" />
-        </div>
-        <button>sign up</button>
-      </form>
+          <div>
+            <i class="fas fa-lock"></i>
+            <input class="password" type="text" placeholder="Password" />
+            <span class="password-massege">Lorem, ipsum.</span>
+          </div>
+          <div>
+            <i class="fas fa-lock"></i>
+            <input class="cpassword" type="text" placeholder="Confirm Password" />
+            <span class="cpassword-massege">Lorem, ipsum.</span>
+          </div>
+          <div class="gander">
+            <input type="radio" id="female" name="gender" />
+            <label class="female" for="female">female</label>
+            <input type="radio" id="male" name="gender" />
+            <label for="male">male</label>
+            <span class="gender-massege">Please select a gender.</span>
+          </div>
+          <button class="sign-up">sign up</button>
+        </form>
+      </div>
     </div>
 
     <script src="javascript/index.js"></script>
