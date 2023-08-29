@@ -194,7 +194,7 @@
   }
 
   .container .sign-up-form button.active {
-    opacity: .5;
+    background-color: red;
   }
 
   /* End Form */
