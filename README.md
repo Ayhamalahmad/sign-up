@@ -21,6 +21,6 @@ This project showcases a sign-up form with client-side validation using HTML, CS
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or want to enhance the project, feel free to create a pull request.
+ feel free to create a pull request.
 
 
