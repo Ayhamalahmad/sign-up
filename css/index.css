@@ -137,7 +137,14 @@
       top: 11px;
       color: #3F3D56;
   }
-
+  .container .sign-up-form div .password-show{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 27px;
+    /* background-color: red; */
+    padding: 4px;
+}
   .container .sign-up-form div input {
       border: none;
       border-bottom: 1px solid #ccc;

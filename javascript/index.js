@@ -129,14 +129,20 @@ signUpBotton.addEventListener("click", (event) => {
     localStorage.setItem("user", userDataString);
   }
 });
-//  show password
-let show = document.querySelector(".show");
-// passwordInput.type = "text";
-show.addEventListener("click",(e)=>{
-  console.log(e.target);
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-  } else {
-    passwordInput.type = "password";
-  }
-})
+// handle  show  & hide password
+let shows = document.querySelectorAll(".show");
+let inputsHandler = document.querySelectorAll(".p-sh-handler");
+shows.forEach((show, index) => {
+  show.addEventListener("click", (e) => {
+    console.log(e.target);
+    if (inputsHandler[index].type === "password") {
+      inputsHandler[index].type = "text";
+      show.classList.remove("fa-eye-slash");
+      show.classList.add("fa-eye");
+    } else {
+      inputsHandler[index].type = "password";
+      show.classList.add("fa-eye-slash");
+      show.classList.remove("fa-eye");
+    }
+  });
+});
