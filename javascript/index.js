@@ -15,21 +15,18 @@ let emailMassege = document.querySelector(".email-massege");
 let passwordMassege = document.querySelector(".password-massege");
 let cpasswordMassege = document.querySelector(".cpassword-massege");
 let genderMassege = document.querySelector(".gender-massege");
+let buttonMassege = document.querySelector(".button-massege");
 // botton
 let signUpBotton = document.querySelector(".sign-up");
-//
 // Regular expression for validating usernames: 3-16 characters, allows lowercase letters, digits, underscores, and hyphens.
 let userNameReg = /^[a-z0-9_-]{3,16}$/;
-
 // Regular expression for validating password
 let passwordReg =
   /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\[\]{}\-_+=~`;:"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
 // Regular expression for validating email addresses using a basic pattern.
 let emailReg = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.com)*$/;
-
-
 // Function to handle individual input validation
-const  validateInput=(input, regex, messageElement)=> {
+const validateInput = (input, regex, messageElement) => {
   if (!input.value.match(regex)) {
     messageElement.classList.add("active");
     input.classList.add("active");
@@ -39,7 +36,7 @@ const  validateInput=(input, regex, messageElement)=> {
     messageElement.classList.remove("active");
     return true;
   }
-}
+};
 // Handling Username validation
 userNameInput.addEventListener("input", () =>
   validateInput(userNameInput, userNameReg, userMassege)
@@ -75,69 +72,60 @@ fullNameInput.addEventListener("blur", () => {
   }
 });
 
-//
-// Loop
-// inputs.forEach((input) => {
-//   if (input.type !== "radio") {
-//     input.addEventListener("input", (e) => {
-//       e.preventDefault();
-//       // Handling Full Name validation
-//       if (fullNameInput.value.trim() === "") {
-//         fullNameInput.classList.add("active");
-//         nameMassege.classList.add("active");
-//       } else {
-//         fullNameInput.classList.remove("active");
-//         nameMassege.classList.remove("active");
-//       }
+// Handle Seleted Gender
+let selectedGender = "";
+femaleRadio.addEventListener("change", () => {
+  if (femaleRadio.checked) {
+    selectedGender = "female";
+  }
+});
 
-//       // Handling Username validation
-//       // if (!userNameInput.value.match(userNameReg)) {
-//       //   userMassege.classList.add("active");
-//       //   userNameInput.classList.add("active");
-//       // } else {
-//       //   userNameInput.classList.remove("active");
-//       //   userMassege.classList.remove("active");
-//       // }
+maleRadio.addEventListener("change", () => {
+  if (maleRadio.checked) {
+    selectedGender = "male";
+  }
+});
 
-//       // Handling Email Input validation
-//       // if (!emailInput.value.match(emailReg)) {
-//       //   emailMassege.classList.add("active");
-//       //   emailInput.classList.add("active");
-//       // } else {
-//       //   emailInput.classList.remove("active");
-//       //   emailMassege.classList.remove("active");
-//       // }
+signUpBotton.addEventListener("click", (event) => {
+  if (
+    fullNameInput.value &&
+    userNameReg.test(userNameInput.value) &&
+    passwordReg.test(passwordInput.value) &&
+    cpasswordInput.value === passwordInput.value &&
+    emailReg.test(emailInput.value) &&
+    selectedGender !== ""
+  ) {
+    console.log("All inputs are valid. Ready to proceed.");
+    buttonMassege.classList.remove("active");
+    event.stopPropagation();
+  } else {
+    event.preventDefault();
+    console.log("Please fill in all required fields with valid data.");
+    buttonMassege.classList.add("active");
+  }
 
-//       // Handling password Input validation
-//       // if (!passwordInput.value.match(passwordReg)) {
-//       //   passwordMassege.classList.add("active");
-//       //   passwordInput.classList.add("active");
-//       // } else {
-//       //   passwordMassege.classList.remove("active");
-//       //   passwordInput.classList.remove("active");
-//       // }
-
-//       // // Handling Confirm password Input validation
-//       // if (!cpasswordInput.value == passwordInput.value) {
-//       //   cpasswordMassege.classList.add("active");
-//       //   cpasswordInput.classList.add("active");
-//       // } else {
-//       //   cpasswordMassege.classList.remove("active");
-//       //   cpasswordInput.classList.remove("active");
-//       // }
-//     });
-//   }
-// });
-
-//
-
-signUpBotton.addEventListener("click",  (event)=> {
   if (!femaleRadio.checked && !maleRadio.checked) {
     event.preventDefault();
-    // alert("Please select a gender.");
     genderMassege.classList.add("active");
   } else {
     genderMassege.classList.remove("active");
   }
-  //
+  // Store User Data In  Local Storage
+  if (
+    fullNameInput.value &&
+    userNameReg.test(userNameInput.value) &&
+    passwordReg.test(passwordInput.value) &&
+    cpasswordInput.value === passwordInput.value &&
+    emailReg.test(emailInput.value)
+  ) {
+    let userData = {
+      full_Name: fullNameInput.value,
+      user_Name: userNameInput.value,
+      email: emailInput.value,
+      password: passwordInput.value,
+      gender: selectedGender,
+    };
+    const userDataString = JSON.stringify(userData);
+    localStorage.setItem("user", userDataString);
+  }
 });

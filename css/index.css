@@ -184,6 +184,7 @@
 
 
   .container .sign-up-form button {
+    /* display: inline; */
       background-color: #6C63FF;
       border: none;
       color: white;
@@ -193,8 +194,24 @@
       cursor: pointer;
   }
 
-  .container .sign-up-form button.active {
-    background-color: red;
+  .container .sign-up-form .sign-up.disabled {
+      background-color: red;
+      cursor: not-allowed;
+  }
+  .container .sign-up-form .btn-massege{
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: spa; */
+  }
+  .container .sign-up-form .button-massege {
+      visibility: hidden;
+      /* color: re; */
+  }
+
+  .container .sign-up-form .button-massege.active {
+      visibility: initial;
   }
 
   /* End Form */
