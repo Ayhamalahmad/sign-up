@@ -29,6 +29,9 @@
   @media (max-width: 767px) {
       .container {
           width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
       }
 
   }
@@ -79,12 +82,12 @@
 
   /*  */
   /* Start image */
-  @media (max-width:767px) {
-    .container .app  {
+  /* @media (max-width:767px) {
+    .container   {
         margin: 20px 0;
     }
 }
-  .container .app .image {
+  .container .app .image { */
       display: flex;
       flex-direction: column;
       width: 50%;
