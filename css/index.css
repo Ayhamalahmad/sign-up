@@ -213,7 +213,8 @@
 }
 @media (max-width:767px) {
     .container .sign-up-form .btn-massege{
-        flex-direction: inherit;
+        flex-direction: column !important;
+        align-items: start;
 
     }
   }
