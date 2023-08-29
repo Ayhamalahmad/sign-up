@@ -204,6 +204,12 @@
     align-items: center;
     gap: 10px;
     /* justify-content: spa; */
+}
+@media (max-width:767px) {
+    .container .sign-up-form .btn-massege{
+        flex-direction: inherit;
+
+    }
   }
   .container .sign-up-form .button-massege {
       visibility: hidden;
