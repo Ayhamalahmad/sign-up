@@ -111,20 +111,14 @@
   }
 
   .container .image a {
-    text-decoration: none;
-    background-color: #6C63FF;
-    border: none;
-    color: white;
-    width: fit-content;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+      color: #6C63FF;
+      transition: all .3s ease-in-out;
   }
-  .container .image a:hover{
-    background-color: #ADA9BB;
-    color: #FFFFFF;
-}
+
+  .container .image a:hover {
+      color: #ADA9BB;
+  }
+
   /* End image */
 
   /* Start Form */
@@ -136,7 +130,10 @@
 
   @media (max-width:991px) {
       .container .sign-up-form {
-          width: 80%;
+        width: 80%;
+        /* text-align: center; */
+    
+
       }
   }
 
@@ -149,6 +146,7 @@
 
   .container .sign-up-form h1 {
       color: #3F3D56;
+      text-align: center;
   }
 
 
@@ -193,6 +191,25 @@
       /* display: none; */
       visibility: hidden;
   }
+  @media (max-width: 767px) {
+    .container .sign-up-form .email-massege{
+        display: none;
+    }
+    .container .sign-up-form .email-massege.active{
+        display: initial;
+    }
+    .container .sign-up-form .email,
+    .container .sign-up-form .password {
+        margin-bottom: 20px;
+    }
+    .container .sign-up-form div span.password-massege{
+        display: none;
+      }
+      .container .sign-up-form div span.password-massege.active{
+        display: initial;
+      }
+  }
+
 
   .container .sign-up-form div span:not(.cm).active {
       color: #B00003;
@@ -218,8 +235,14 @@
       margin: 20px 0;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
   }
-
+  @media (max-width: 576px) {
+    .container .sign-up-form .gander{
+        justify-content: center; 
+     }
+    
+  }
   .container .sign-up-form .gander label {
       cursor: pointer;
       user-select: none;
@@ -234,7 +257,11 @@
   .container .sign-up-form .gander .female {
       margin-right: 20px;
   }
-
+@media (max-width: 576px) {
+    .container .sign-up-form .gander .gender-massege{
+        margin-top: 10px;
+    }
+}
 
 
   .container .sign-up-form a {
@@ -247,7 +274,12 @@
       border-radius: 5px;
       cursor: pointer;
       transition: all .3s ease-in-out;
-
+  }
+  @media (max-width: 767px) {
+    .container .sign-up-form a{
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .container .sign-up-form a:hover {
@@ -271,16 +303,22 @@
   @media (max-width:767px) {
       .container .sign-up-form .btn-massege {
           flex-direction: column !important;
-          align-items: start;
+          /* align-items: start; */
 
       }
   }
 
   .container .sign-up-form .button-massege {
       visibility: hidden;
+
       /* color: re; */
   }
 
+  @media (max-width: 767px) {
+    .container .sign-up-form .button-massege{
+        margin-top: 20px;
+    }
+  }
   .container .sign-up-form .button-massege.active {
       visibility: initial;
   }

@@ -7,7 +7,7 @@
 body {
     background: #FFFFFF;
     background: conic-gradient(from 225deg, #FFFFFF, #6D63FF);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,7 +199,7 @@ body {
     display: flex;
     flex-direction: row !important;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 @media (max-width: 767px) {
