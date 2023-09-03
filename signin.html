@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/signin.css" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <title>sign up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="imges/undraw_working_remotely_re_6b3a.svg" alt="" />
+        <a href="signin.html">I'm Already a Member</a>
+      </div>
+      <form class="sign-up-form">
+        <h1>Sign In</h1>
+        <div>
+          <i class="fas fa-at"></i>
+          <input class="user-name" type="text" placeholder="@User Name" />
+          <span class="user-massege"
+            >Username must be between 3 and 16 characters</span
+          >
+        </div>
+
+        <div>
+          <i class="fas fa-lock"></i>
+          <i class="fas fa-eye-slash show password-show"></i>
+          <input
+            class="password p-sh-handler"
+            type="password"
+            placeholder="Password"
+          />
+          <span class="password-massege">
+            Make sure your password: - Is at least 8 characters long. - Has a
+            lowercase and an uppercase letter. - Includes a number (digit) and a
+            special symbol.
+          </span>
+        </div>
+
+        <div class="btn-massege">
+          <button class="sign-up">sign up</button>
+          <span class="button-massege"
+            >Please fill in all required fields with valid data.</span
+          >
+        </div>
+      </form>
+    </div>
+    <script src="javascript/signin.js"></script>
+  </body>
+</html>
