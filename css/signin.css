@@ -5,8 +5,8 @@
 }
 
 body {
-    background: #6D63FF;
-    background: conic-gradient(from 45deg, #6D63FF, #FFFFFF);
+    background: #FFFFFF;
+    background: conic-gradient(from 225deg, #FFFFFF, #6D63FF);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -19,17 +19,6 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    /*  */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-      background: rgba(255, 255, 255, 1);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 /*small*/
@@ -64,6 +53,27 @@ body {
 /* End  Container */
 
 /*Start sign in   */
+.container .app {
+    padding: 50px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width:991px) {
+    .container .app {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* start image */
 .container .image {
     display: flex;
@@ -74,64 +84,179 @@ body {
 }
 
 @media (max-width:991px) {
-    .container .app .image {
-        display: none;
+    .container .image {
+        /* display: none; */
     }
 }
 
+.container .image.not-active {
+    display: none;
+}
 
 .container .image img {
-    max-width: 100%;
+    /* max-width: 100%; */
+    width: 100%;
+}
+
+.container .image a {
+    color: #6C63FF;
 }
 
 /* End image */
 
 /* Start Form */
-.container .sign-in-form {
+
+.container .app .sign-in-form {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 @media (max-width:991px) {
-    .container .sign-in-form {
+    .container .app .sign-in-form {
         width: 80%;
     }
 }
-.container .sign-in-form h1 {
-    color: #3F3D56;
+
+.container .app .sign-in-form.not-active {
+    display: none;
 }
-.container .sign-in-form div{
+
+.container .app .sign-in-form h1 {
+    color: #3F3D56;
+    text-transform: capitalize;
+}
+
+.container .app .sign-in-form div {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.container .sign-in-form div i {
+
+.container .app .sign-in-form div>i {
     position: absolute;
     top: 11px;
     color: #3F3D56;
 }
-.container .sign-in-form div input {
+
+.container .app .sign-in-form div .password-show {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 31px;
+    /* background-color: red; */
+    padding: 4px;
+    height: 26px;
+    text-align: center;
+}
+
+.container .app .sign-in-form div input {
     border: none;
     border-bottom: 1px solid #ccc;
     padding: 10px 25px;
 }
-.container .sign-in-form div input.active {
+
+/* يرجى الانباه */
+/* .container .app .sign-in-form div input.active {
     border-bottom: 1px solid red;
 
 }
 
-.container .sign-in-form div input.active::placeholder {
+.container .app .sign-in-form div input.active::placeholder {
     color: red;
-}
+} */
+/* يرجى الانباه */
 
-.container .sign-in-form div input:focus {
+.container .app .sign-in-form div input:focus {
     outline: none;
 }
 
+.container .app .sign-in-form button {
+    /* display: inline; */
+    background-color: #6C63FF;
+    border: none;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.container .app .sign-in-form button:hover {
+    background-color: #ADA9BB;
+    color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .container .app .sign-in-form button {
+        width: 100%;
+    }
+}
+
+.container .app .sign-in-form .btn-massege {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 767px) {
+    .container .app .sign-in-form .btn-massege {
+        flex-direction: column !important;
+        /* width: 100%; */
+    }
+}
+
+
+.container .app .sign-in-form .btn-massege .button-massege {
+    visibility: hidden;
+    color: #B00003;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.container .app .sign-in-form .btn-massege .button-massege.active {
+    visibility: initial;
+
+}
 
 /* End Form */
+/* Start  welcome */
+.container .app .welcome {
+    display: none;
+    width: 100%;
+}
 
+.container .app .welcome.active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container .app .welcome img {
+    /* max-width: 100%; */
+    max-width: 50%;
+}
+
+@media (max-width: 767px) {
+    .container .app .welcome img {
+        max-width: 100%;
+
+    }
+}
+
+.container .app .welcome h1 {
+    text-transform: capitalize;
+    color: #6C63FF;
+}
+
+.container .app .welcome h1 span {
+    color: #3F3D56;
+}
+
+/* End  welcome */
 
 /*End sign in   */

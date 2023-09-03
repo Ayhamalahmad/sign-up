@@ -7,7 +7,7 @@
   body {
       background: #6D63FF;
       background: conic-gradient(from 45deg, #6D63FF, #FFFFFF);
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -70,22 +70,21 @@
       -webkit-backdrop-filter: blur(20px);
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.18);
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px 10px;
   }
 
-  /* 
+
   @media (max-width:991px) {
       .container .app {
-          flex-direction: column;
+          flex-direction: column-reverse;
+
       }
-  } */
+  }
 
   /*  */
   /* Start image */
-  /* @media (max-width:767px) {
-    .container   {
-        margin: 20px 0;
-    }
-}*/
   .container .app .image {
       display: flex;
       flex-direction: column;
@@ -96,7 +95,7 @@
 
   @media (max-width:991px) {
       .container .app .image {
-          display: none;
+          /* display: none; */
       }
   }
 
@@ -105,8 +104,27 @@
       max-width: 100%;
   }
 
-  .container .image a {}
+  @media (max-width:991px) {
+      .container .app .image img {
+          display: none;
+      }
+  }
 
+  .container .image a {
+    text-decoration: none;
+    background-color: #6C63FF;
+    border: none;
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+  .container .image a:hover{
+    background-color: #ADA9BB;
+    color: #FFFFFF;
+}
   /* End image */
 
   /* Start Form */
@@ -133,23 +151,22 @@
       color: #3F3D56;
   }
 
- 
-  
-  .container .sign-up-form div  > i {
+
+
+  .container .sign-up-form div>i {
       position: absolute;
       top: 11px;
       color: #3F3D56;
   }
 
-  .container .sign-up-form div  .password-show {
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    width: 31px;
-    /* background-color: red; */
-    padding: 4px;
-    height: 26px;
-    text-align: center;
+  .container .sign-up-form div .password-show {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      width: 31px;
+      padding: 4px;
+      height: 26px;
+      text-align: center;
   }
 
   .container .sign-up-form div input {
@@ -159,12 +176,12 @@
   }
 
   .container .sign-up-form div input.active {
-      border-bottom: 1px solid red;
+      border-bottom: 1px solid #B00003;
 
   }
 
   .container .sign-up-form div input.active::placeholder {
-      color: red;
+      color: #B00003;
   }
 
   .container .sign-up-form div input:focus {
@@ -172,13 +189,13 @@
   }
 
   .container .sign-up-form div span:not(.cm) {
-      /* color: red; */
+      /* color: #B00003; */
       /* display: none; */
       visibility: hidden;
   }
 
   .container .sign-up-form div span:not(.cm).active {
-      color: red;
+      color: #B00003;
       visibility: initial;
       /* display: initial; */
   }
@@ -194,7 +211,7 @@
 
   .container .sign-up-form .con-password span.not-matched {
       display: block;
-      color: red;
+      color: #B00003;
   }
 
   .container .sign-up-form .gander {
@@ -207,6 +224,7 @@
       cursor: pointer;
       user-select: none;
       padding: 0 10px;
+      text-transform: capitalize;
   }
 
   .container .sign-up-form .gander input {
@@ -219,8 +237,8 @@
 
 
 
-  .container .sign-up-form button {
-      /* display: inline; */
+  .container .sign-up-form a {
+      text-decoration: none;
       background-color: #6C63FF;
       border: none;
       color: white;
@@ -228,10 +246,17 @@
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      transition: all .3s ease-in-out;
+
+  }
+
+  .container .sign-up-form a:hover {
+      background-color: #ADA9BB;
+      color: #FFFFFF;
   }
 
   .container .sign-up-form .sign-up.disabled {
-      background-color: red;
+      background-color: #B00003;
       cursor: not-allowed;
   }
 

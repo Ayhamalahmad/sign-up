@@ -99,12 +99,11 @@ signUpBotton.addEventListener("click", (event) => {
     emailReg.test(emailInput.value) &&
     selectedGender !== ""
   ) {
-    console.log("All inputs are valid. Ready to proceed.");
     buttonMassege.classList.remove("active");
     event.stopPropagation();
+    window.location.href = 'signin.html';
   } else {
     event.preventDefault();
-    console.log("Please fill in all required fields with valid data.");
     buttonMassege.classList.add("active");
   }
 
@@ -138,7 +137,6 @@ let shows = document.querySelectorAll(".show");
 let inputsHandler = document.querySelectorAll(".p-sh-handler");
 shows.forEach((show, index) => {
   show.addEventListener("click", (e) => {
-    console.log(e.target);
     if (inputsHandler[index].type === "password") {
       inputsHandler[index].type = "text";
       show.classList.remove("fa-eye-slash");
