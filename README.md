@@ -19,8 +19,18 @@ This project showcases a sign-up form with client-side validation using HTML, CS
 - CSS
 - JavaScript
 
+
+# Sign-In Page
+
+
+## Features
+
+- **User Authentication:** 
+- **Password Visibility:** Easily toggle password visibility for convenience.
+- **User-Friendly Interface:** An intuitive design for a seamless sign-in experience.
+
+
 ## Contributing
 
  feel free to create a pull request.
-
 
