@@ -13,7 +13,8 @@ let nameMassege = document.querySelector(".name-massege");
 let userMassege = document.querySelector(".user-massege");
 let emailMassege = document.querySelector(".email-massege");
 let passwordMassege = document.querySelector(".password-massege");
-let cpasswordMassege = document.querySelector(".cpassword-massege");
+let cpasswordNotMassege = document.querySelector(".cpassword-massege-not-matched");
+let cpasswordMMatched = document.querySelector(".cpassword-massege-matched");
 let genderMassege = document.querySelector(".gender-massege");
 let buttonMassege = document.querySelector(".button-massege");
 // botton
@@ -53,11 +54,14 @@ passwordInput.addEventListener("input", () => {
 cpasswordInput.addEventListener("input", () => {
   const passwordsMatch = cpasswordInput.value === passwordInput.value;
   if (passwordsMatch) {
-    cpasswordMassege.classList.remove("active");
     cpasswordInput.classList.remove("active");
-  } else {
-    cpasswordMassege.classList.add("active");
-    cpasswordInput.classList.add("active");
+    cpasswordMMatched.classList.add("matched");
+    cpasswordNotMassege.classList.remove("not-matched");
+    
+    } else {
+      cpasswordInput.classList.add("active");
+      cpasswordMMatched.classList.remove("matched");
+      cpasswordNotMassege.classList.add("not-matched");
   }
 });
 

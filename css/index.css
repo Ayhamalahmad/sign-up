@@ -108,6 +108,7 @@
   .container .image a {}
 
   /* End image */
+
   /* Start Form */
   .container .sign-up-form {
       width: 50%;
@@ -132,19 +133,21 @@
       color: #3F3D56;
   }
 
-  .container .sign-up-form div i {
+  .container .sign-up-form div > i {
       position: absolute;
       top: 11px;
       color: #3F3D56;
   }
-  .container .sign-up-form div .password-show{
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    width: 27px;
-    /* background-color: red; */
-    padding: 4px;
-}
+
+  .container .sign-up-form div .password-show {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+      width: 27px;
+      /* background-color: red; */
+      padding: 4px;
+  }
+
   .container .sign-up-form div input {
       border: none;
       border-bottom: 1px solid #ccc;
@@ -164,16 +167,30 @@
       outline: none;
   }
 
-  .container .sign-up-form div span {
+  .container .sign-up-form div span:not(.cm) {
       /* color: red; */
       /* display: none; */
       visibility: hidden;
   }
 
-  .container .sign-up-form div span.active {
+  .container .sign-up-form div span:not(.cm).active {
       color: red;
       visibility: initial;
       /* display: initial; */
+  }
+
+  .container .sign-up-form .con-password span {
+      display: none;
+  }
+
+  .container .sign-up-form .con-password span.matched {
+      color: green;
+      display: block;
+  }
+
+  .container .sign-up-form .con-password span.not-matched {
+      display: block;
+      color: red;
   }
 
   .container .sign-up-form .gander {
@@ -199,7 +216,7 @@
 
 
   .container .sign-up-form button {
-    /* display: inline; */
+      /* display: inline; */
       background-color: #6C63FF;
       border: none;
       color: white;
@@ -213,20 +230,23 @@
       background-color: red;
       cursor: not-allowed;
   }
-  .container .sign-up-form .btn-massege{
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-    gap: 10px;
-    /* justify-content: spa; */
-}
-@media (max-width:767px) {
-    .container .sign-up-form .btn-massege{
-        flex-direction: column !important;
-        align-items: start;
 
-    }
+  .container .sign-up-form .btn-massege {
+      display: flex;
+      flex-direction: row !important;
+      align-items: center;
+      gap: 10px;
+      /* justify-content: spa; */
   }
+
+  @media (max-width:767px) {
+      .container .sign-up-form .btn-massege {
+          flex-direction: column !important;
+          align-items: start;
+
+      }
+  }
+
   .container .sign-up-form .button-massege {
       visibility: hidden;
       /* color: re; */
