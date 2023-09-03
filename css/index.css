@@ -133,19 +133,23 @@
       color: #3F3D56;
   }
 
-  .container .sign-up-form div > i {
+ 
+  
+  .container .sign-up-form div  > i {
       position: absolute;
       top: 11px;
       color: #3F3D56;
   }
 
-  .container .sign-up-form div .password-show {
-      position: absolute;
-      right: 0;
-      cursor: pointer;
-      width: 27px;
-      /* background-color: red; */
-      padding: 4px;
+  .container .sign-up-form div  .password-show {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 31px;
+    /* background-color: red; */
+    padding: 4px;
+    height: 26px;
+    text-align: center;
   }
 
   .container .sign-up-form div input {
