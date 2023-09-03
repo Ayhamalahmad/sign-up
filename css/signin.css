@@ -199,6 +199,7 @@ body {
     display: flex;
     flex-direction: row !important;
     align-items: center;
+    margin-top: 20px;
     gap: 20px;
 }
 

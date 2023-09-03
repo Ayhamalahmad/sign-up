@@ -222,7 +222,7 @@
   }
 
   .container .sign-up-form .con-password span.matched {
-      color: green;
+      color: #008B6D;
       display: block;
   }
 
